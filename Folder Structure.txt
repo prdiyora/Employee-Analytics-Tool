@@ -1,0 +1,19 @@
+/Employee-Management-System
+│
+├── /public               (All your frontend files)
+│   ├── home.html         <-- The "What is this project?" page
+│   ├── dashboard.html    <-- The "Stats & Insights" page
+│   ├── view-staff.html   <-- The "Table & Actions" page
+│   ├── add-staff.html    <-- The "Form" page
+│   ├── css/
+│   │   └── style.css     <-- Use Sidebar & Corporate Colors (Navy Blue/White)
+│   └── js/
+│       ├── main.js       <-- Handles UI logic
+│       └── api.js        <-- Handles fetch() calls to the backend
+│
+├── /backend
+│   ├── server.js         <-- Express.js connection
+│   └── db_config.js      <-- MySQL connection settings
+│
+├── database.sql          <-- YOUR SKILL: SQL Schema and Dummy Data
+└── README.md             <-- YOUR VOICE: Explain how to run the project

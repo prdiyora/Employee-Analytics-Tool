@@ -1,0 +1,390 @@
+/* ================= GLOBAL RESET ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f4f6f9;
+    color: #333;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+    background-color: #0a192f;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.nav-btn {
+    background-color: white;
+    color: #0a192f;
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* ================= HERO ================= */
+.hero {
+    background: linear-gradient(to right, #0a192f, #112240);
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.btn-primary {
+    background-color: #64ffda;
+    color: #0a192f;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #52e0c4;
+}
+
+/* ================= FEATURES ================= */
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 60px 40px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+/* ================= FOOTER ================= */
+footer {
+    background-color: #0a192f;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+/* ================= DASHBOARD HEADER ================= */
+.dashboard-header {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.dashboard-header h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+/* ================= STATS CARDS ================= */
+.stats-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px;
+    flex-wrap: wrap;
+}
+
+.stat-card {
+    background: white;
+    width: 280px;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-card h3 {
+    margin-bottom: 15px;
+    color: #0a192f;
+}
+
+.stat-card p {
+    font-size: 28px;
+    font-weight: bold;
+    color: #0a192f;
+}
+
+/* ================= ACTION BUTTONS ================= */
+.dashboard-actions {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+/* ================= SEARCH ================= */
+.search-container {
+    text-align: center;
+    margin: 20px;
+}
+
+.search-container input {
+    width: 300px;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+/* ================= TABLE ================= */
+.table-container {
+    padding: 20px 40px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #0a192f;
+    color: white;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+.delete-btn {
+    background-color: #ff4d4d;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+}
+
+/* ================= FORM ================= */
+.form-container {
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+}
+
+form {
+    background: white;
+    padding: 40px;
+    width: 350px;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+form input, form select {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+/* ================= CHAT WRAPPER ================= */
+.chat-wrapper {
+    width: 600px;
+    margin: 40px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.chat-box {
+    height: 300px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Bot bubble */
+.bot-bubble {
+    background: #f1f1f1;
+    padding: 10px 15px;
+    border-radius: 15px;
+    max-width: 70%;
+    align-self: flex-start;
+}
+
+/* User bubble */
+.user-bubble {
+    background: #0a192f;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 15px;
+    max-width: 70%;
+    align-self: flex-end;
+}
+
+/* Suggestions */
+.suggestions {
+    margin-bottom: 10px;
+}
+
+.suggestions button {
+    margin: 5px;
+    padding: 6px 12px;
+    background: #e6f1ff;
+    border: 1px solid #0a192f;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.suggestions button:hover {
+    background: #0a192f;
+    color: white;
+}
+
+/* Floating Button */
+.ai-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #0a192f;
+    color: white;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 24px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+/* Chat Panel */
+.ai-chat {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 350px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.hidden {
+    display: none;
+}
+
+.ai-header {
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.close-btn {
+    cursor: pointer;
+}
+
+/* Chat bubbles inside widget */
+.ai-chat .chat-box {
+    height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.ai-chat .bot-bubble {
+    background: #f1f1f1;
+    padding: 8px 12px;
+    border-radius: 12px;
+    align-self: flex-start;
+}
+
+.ai-chat .user-bubble {
+    background: #0a192f;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 12px;
+    align-self: flex-end;
+}
+
+.ai-chat .chat-input {
+    display: flex;
+    gap: 5px;
+}
+
+.ai-chat .chat-input input {
+    flex: 1;
+    padding: 6px;
+}
+
+/* Modern Send Button */
+.send-btn {
+    background: #0a192f;
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.send-btn:hover {
+    background: #64ffda;
+    color: #0a192f;
+    transform: scale(1.1);
+}

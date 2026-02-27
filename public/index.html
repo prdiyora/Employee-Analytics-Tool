@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard - NextGen Admin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <div id="aiToggle" class="ai-toggle" onclick="toggleAI()">
+    🤖
+     </div>
+    <div id="aiChat" class="ai-chat hidden">
+
+    <div class="ai-header">
+        HR Assistant
+        <span onclick="toggleAI()" class="close-btn">✖</span>
+    </div>
+
+    <div id="chatBox" class="chat-box"></div>
+
+    <div class="suggestions">
+        <button onclick="askPredefined('What is total employees?')">Total Employees</button>
+        <button onclick="askPredefined('What is total payroll?')">Total Payroll</button>
+        <button onclick="askPredefined('Who has highest salary?')">Highest Salary</button>
+        <button onclick="askPredefined('How many employees in Engineering?')">Engineering Count</button>
+    </div>
+
+    <div class="chat-input">
+        <input type="text" id="userQuestion" placeholder="Ask HR question...">
+        <button class="send-btn" onclick="sendQuestion()">
+         ➤
+          </button>
+    </div>
+
+</div>
+
+<script src="/js/ai-widget.js"></script>
+
+
+    <!-- ================= NAVBAR ================= -->
+    <nav class="navbar">
+        <div class="logo">NextGen Admin Suite</div>
+        <a href="home.html" class="nav-btn">Home</a>
+    </nav>
+
+    <!-- ================= DASHBOARD HEADER ================= -->
+    <section class="dashboard-header">
+        <h1>Employee Dashboard</h1>
+        <p>Real-time insights powered by PostgreSQL</p>
+    </section>
+
+    <!-- ================= STATS CARDS ================= -->
+    <section class="stats-container">
+
+        <div class="stat-card">
+            <h3>Total Employees</h3>
+            <p id="totalEmployees">0</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>Total Payroll</h3>
+            <p id="totalPayroll">₹0</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>Total Departments</h3>
+            <p id="totalDepartments">0</p>
+        </div>
+
+    </section>
+
+    <!-- ================= ACTION BUTTONS ================= -->
+    <section class="dashboard-actions">
+        <a href="view-employees.html" class="btn-primary">View Employees</a>
+        <a href="add-employee.html" class="btn-primary">Add Employee</a>
+        <a href="ai-assistant.html" class="btn-primary">HR AI Assistant</a>
+    </section>
+
+    <!-- ================= JS ================= -->
+    <script src="/js/dashboard.js"></script>
+
+</body>
+</html>

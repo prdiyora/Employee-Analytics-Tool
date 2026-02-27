@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NextGen Employee Analytics Tool</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Correct CSS Path -->
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+    <nav class="navbar">
+        <div class="logo">NextGen Admin Suite</div>
+        <a href="index.html" class="nav-btn">Launch App</a>
+        
+    </nav>
+
+    <!-- ================= FLOATING AI BOT ================= -->
+<div id="aiToggle" class="ai-toggle" onclick="toggleAI()">
+    🤖
+</div>
+
+<div id="aiChat" class="ai-chat hidden">
+
+    <div class="ai-header">
+        HR Assistant
+        <span onclick="toggleAI()" class="close-btn">✖</span>
+    </div>
+
+    <div id="chatBox" class="chat-box"></div>
+
+    <div class="suggestions">
+        <button onclick="askPredefined('What is total employees?')">Total Employees</button>
+        <button onclick="askPredefined('What is total payroll?')">Total Payroll</button>
+        <button onclick="askPredefined('Who has highest salary?')">Highest Salary</button>
+        <button onclick="askPredefined('How many employees in Engineering?')">Engineering Count</button>
+    </div>
+
+    <div class="chat-input">
+        <input type="text" id="userQuestion" placeholder="Ask HR question...">
+        <button class="send-btn" onclick="sendQuestion()">
+         ➤
+          </button>
+    </div>
+
+</div>
+
+<script src="/js/ai-widget.js"></script>
+
+    <!-- ================= HERO ================= -->
+    <section class="hero">
+        <h1>NextGen Employee Analytics Tool</h1>
+        <p>Streamline HR Operations. Gain Real-Time Insights. Manage Workforce Efficiently.</p>
+        <a href="index.html" class="btn-primary">Get Started</a>
+    </section>
+
+    <!-- ================= FEATURES ================= -->
+    <section class="features">
+
+        <div class="card">
+            <h3>⚡ Efficiency</h3>
+            <p>Reduce HR manual entry by 40% with automated employee tracking.</p>
+        </div>
+
+        <div class="card">
+            <h3>🔒 Data Integrity</h3>
+            <p>Secure PostgreSQL storage ensures reliable and structured employee data.</p>
+        </div>
+
+        <div class="card">
+            <h3>📊 Real-Time Analytics</h3>
+            <p>Instant dashboard insights on payroll, departments, and workforce growth.</p>
+        </div>
+
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+        © 2026 NextGen Employee Analytics Tool | Designed by Priyank
+    </footer>
+
+</body>
+</html>

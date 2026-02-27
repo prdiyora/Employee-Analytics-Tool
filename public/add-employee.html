@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Employee</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">NextGen Admin Suite</div>
+        <a href="index.html" class="nav-btn">Dashboard</a>
+    </nav>
+
+    <section class="dashboard-header">
+        <h1>Add New Employee</h1>
+        <p>Enter employee details below</p>
+    </section>
+
+    <div class="form-container">
+        <form id="employeeForm">
+
+            <input type="text" id="firstName" placeholder="First Name" required>
+            <input type="text" id="lastName" placeholder="Last Name" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="number" id="salary" placeholder="Salary" required>
+
+            <select id="department" required>
+                <option value="">Select Department</option>
+                <option value="1">Engineering</option>
+                <option value="2">Human Resources</option>
+                <option value="3">Marketing</option>
+                <option value="4">Finance</option>
+                <option value="5">Operations</option>
+            </select>
+
+            <button type="submit" class="btn-primary">Add Employee</button>
+
+        </form>
+    </div>
+
+    <script src="/js/form.js"></script>
+
+</body>
+</html>

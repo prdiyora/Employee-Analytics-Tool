@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Employees</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">NextGen Admin Suite</div>
+        <a href="index.html" class="nav-btn">Dashboard</a>
+    </nav>
+
+    <section class="dashboard-header">
+        <h1>Employee Management</h1>
+        <p>Search, Edit and Delete Employees</p>
+    </section>
+
+    <!-- Search Bar -->
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search by name...">
+    </div>
+
+    <!-- Employee Table -->
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Salary</th>
+                    <th>Department</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="employeeTable">
+                <!-- Data loaded via JS -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="/js/employees.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HR AI Assistant</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">HR AI Assistant</div>
+    <a href="index.html" class="nav-btn">Dashboard</a>
+</nav>
+
+<section class="dashboard-header">
+    <h1>Smart HR Assistant</h1>
+</section>
+
+<div class="chat-wrapper">
+
+    <div id="chatBox" class="chat-box">
+        <div class="bot-bubble">
+            Hi 👋 I can help with payroll, employee count, department stats.
+        </div>
+    </div>
+
+    <div class="suggestions">
+        <button onclick="askPredefined('What is total employees?')">
+            Total Employees
+        </button>
+        <button onclick="askPredefined('What is total payroll?')">
+            Total Payroll
+        </button>
+        <button onclick="askPredefined('Who has highest salary?')">
+            Highest Salary
+        </button>
+        <button onclick="askPredefined('How many employees in Engineering?')">
+            Engineering Count
+        </button>
+    </div>
+
+    <div class="chat-input">
+        <input type="text" id="userQuestion" placeholder="Type your question...">
+        <button onclick="sendQuestion()">Send</button>
+    </div>
+
+</div>
+
+<script src="/js/ai.js"></script>
+</body>
+</html>
