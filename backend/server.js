@@ -1,6 +1,8 @@
 const express = require("express");
 //Express su che? 👉 Node.js ne web server banavva ni library.(Website / API banavva nu engine)
 
+const PORT = process.env.PORT || 3000;
+
 const cors = require("cors");
 //CORS = Cross-Origin Resource Sharing | Frontend (localhost:5500) Backend (localhost:5000)
 //cors() = permission letter 📄
@@ -14,6 +16,7 @@ const employeeRoutes = require("./routes/employeeRoutes");
 //Controller = chef
 
 const app = express(); // final app banavse 
+
 
 app.use(cors());  //Frontend ne allow kare backend sathe vaat karva.
 app.use(express.json());  //  aa middleware JSON ne samjhe che.
@@ -31,7 +34,7 @@ app.get("/", (req, res) => {
 
 
 
-const PORT = process.env.PORT || 5000;
+//const PORT = process.env.PORT || 5000;
 //Jo .env ma PORT hoy toh e use karse nahi hoy toh default 5000.
 
 app.listen(PORT, () => {
