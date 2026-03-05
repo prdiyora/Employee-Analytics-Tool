@@ -10,7 +10,7 @@ const cors = require("cors");
 require("dotenv").config();
 //.env file na data ne load karva mate 
 
-const employeeRoutes = require("./routes/employeeRoutes");
+const employeeRoutes = require("./backend/routes/employeeRoutes");
 // Routes file import kare.
 //Routes = receptionist/ trafic manager // call pick department ma transfer karse    
 //Controller = chef
