@@ -1,52 +1,31 @@
 const express = require("express");
-//Express su che? 👉 Node.js ne web server banavva ni library.(Website / API banavva nu engine)
+const path = require("path");
+const cors = require("cors");
+require("dotenv").config();
+
+const employeeRoutes = require("./backend/routes/employeeRoutes");
+
+const app = express(); 
+
+app.use(cors());
+app.use(express.json());
+
+// Serve static files from the 'public', 'css', and 'js' directories
+app.use(express.static(path.join(__dirname, "public")));
+app.use("/css", express.static(path.join(__dirname, "css")));
+app.use("/js", express.static(path.join(__dirname, "js")));
+
+// API Routes
+app.use("/api/employees", employeeRoutes);
+
+// Home route
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "home.html"));
+});
 
 const PORT = process.env.PORT || 3000;
 
-const cors = require("cors");
-//CORS = Cross-Origin Resource Sharing | Frontend (localhost:5500) Backend (localhost:5000)
-//cors() = permission letter 📄
-
-require("dotenv").config();
-//.env file na data ne load karva mate 
-
-const employeeRoutes = require("./backend/routes/employeeRoutes");
-// Routes file import kare.
-//Routes = receptionist/ trafic manager // call pick department ma transfer karse    
-//Controller = chef
-
-const app = express(); // final app banavse 
-
-
-app.use(cors());  //Frontend ne allow kare backend sathe vaat karva.
-app.use(express.json());  //  aa middleware JSON ne samjhe che.
-
-// Routes
-app.use("/api/employees", employeeRoutes);
-//Jo koi request aave: /api/employees
-//Toh ene employeeRoutes file handle karse.
-//Example: Frontend call kare: > GET /api/employees
-
-// testing mate jo browser ma lakehlu ave ke server okk to all okk
-app.get("/", (req, res) => {
-  res.send("Employee Management API Running 🚀cc");
-});
-
-
-
-//const PORT = process.env.PORT || 5000;
-//Jo .env ma PORT hoy toh e use karse nahi hoy toh default 5000.
-
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
-//Aa line actual server start kare. Without this → backend chalatu j nahi.
-
-
-// Serve frontend static files
-// app.use(express.static(path.join(__dirname, "../public")));
-
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "../public/home.html"));
 });
 
-});

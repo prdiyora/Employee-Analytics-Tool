@@ -1,6 +1,4 @@
 const pool = require("../config/db");
-// pool no use kari data validation check karse 
-const pool = new Pool({ connectionString: process.env.DATABASE_URL });
 
 // =============================
 // GET ALL EMPLOYEES
