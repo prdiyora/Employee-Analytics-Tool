@@ -13,6 +13,9 @@ require("dotenv").config();
 
 const pool = new Pool({
     connectionString: process.env.DATABASE_URL,
+    ssl: {
+        rejectUnauthorized: false
+    }
 });
 
 //Hey PostgreSQL, hu aa user chu, aa password che, aa database ma entry joiye
