@@ -29,7 +29,7 @@ app.use("/api/employees", employeeRoutes);
 
 // testing mate jo browser ma lakehlu ave ke server okk to all okk
 app.get("/", (req, res) => {
-  res.send("Employee Management API Running 🚀");
+  res.send("Employee Management API Running 🚀cc");
 });
 
 
