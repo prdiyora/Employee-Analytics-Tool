@@ -11,3 +11,7 @@ git push -u origin main
 git remote add origin https://github.com/prdiyora/Employee-Analytics-Tool.git
 git branch -M main
 git push -u origin main
+
+git add .
+git commit -m "Updated project files"
+git push origin main
