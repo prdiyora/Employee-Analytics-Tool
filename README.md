@@ -1,116 +1,44 @@
-npm init -y > project ID card like adhar card to store all name , script , dependacy ..
+Employee Management System
 
-npm install express [ webs server] 
-pg[ postgres connection] 
-cors [Allow frontend to call backend ] 
-dotenv  [Secure environment variables]
-_______________________________________________________________________
+This is a small Node.js app that shows and manages employees using PostgreSQL.
 
-Routes Folder = Manager / URL Manage karse / API endpoints / Phone uthaave ane decide kare
-🛣 1️⃣ Routes = Receptionist
-📂 employeeRoutes.js
+Quick overview
+- Backend: `server.js`, Express, routes in `backend/routes`, controllers in `backend/controllers`.
+- Database: PostgreSQL. Schema and sample data in `database.sql`.
+- Frontend: static pages in `public/` and JS in `js/`.
 
-Aa receptionist nu kaam shu?
-Customer su mange che → Kon handle karse e decide kare.
+Setup (local)
+1. Copy `.env.example` to `.env` and set `DATABASE_URL`.
+2. Install dependencies:
+```bash
+npm install
+```
+3. Create database tables and seed departments:
+```bash
+psql "<your_database_url>" -f database.sql
+```
+4. Start the app:
+```bash
+npm start
+```
+5. Open `http://localhost:3000` in your browser.
 
-Example:
-router.get("/", getAllEmployees);
+Notes about `.txt` files
+- All `.txt` files (like notes or local credentials) are ignored by Git via `.gitignore`.
+- This keeps sensitive or temporary text files out of the repository.
 
-Matlab:
-
-👉 Jo koi /api/employees par aave
-Toh receptionist kahe:
-“Sir, aa request getAllEmployees chef handle karse.”
-
-Route = 🔀 “Konse request ne kisko aapvi?”
-_______________________________________________________________________
-
-Controller Folder = Kitchen / Actual kaam kare / Database query kare / controllers contain the business logic and database operations.
-
-👨‍🍳 2️⃣ Controller = Chef
-
-📂 employeeController.js
-
-Chef nu kaam shu?
-Actual kaam karvu.
-Database ma jaine data lai ne aavu.
-
-Example:
-exports.getAllEmployees = async (req, res) => {
-   const result = await pool.query("SELECT * FROM employees");
-   res.json(result.rows);
-};
-
-Aa chef kare che:
-
-Kitchen (Database) ma jaay
-Data banave
-Response ma plate ma serve kare
-
-Routes define API endpoints, while controllers contain the business logic and database operations.
-_______________________________________________________________________
-
-backend/config/db.js > 👉 Node.js ne PostgreSQL sathe connect karvu bas.
-> Database sathe permanent safe connection banavti file
-
-Aa file shu kare che?
-👉 Ek permanent gate pass system banave che.
-
-🔥 Real Flow 
-
-Frontend → API
-API → Controller
-Controller → db.js
-db.js → PostgreSQL
-PostgreSQL → Data
-Data → Back to frontend
-
-What is database pooling?"
-
-You say:
-
-Connection pooling maintains a pool of reusable database connections to improve performance and avoid creating a new connection for every request.
-_______________________________________________________________________
-
-backend/server.js =
-👉 “Akha backend nu brain / entry gate / traffic police.
-
-🏢 Big Picture Analogy
-
-Socho tamaru backend ek mall che 🏬
-
-express = mall building
-
-routes = alag-alag shops
-
-controllers = shop na staff
-
-database = warehouse
-
-server.js =
-👉 Mall nu main gate + manager office.
-_______________________________________________________________________
-
-**Deployment (Render)**
-
-- Create a GitHub repository for this project and push the code.
-- On Render, create a new **Web Service** and connect it to your GitHub repo.
-- Set the **Environment** to `Node`.
+Deploy (Render)
+- Push this repo to GitHub.
+- Create a Web Service on Render and connect the repo.
 - Build command: `npm install`
 - Start command: `npm start`
-- In Render's service settings, add an environment variable named `DATABASE_URL` and set its value to your external database URL. Do NOT commit this value to the repo.
+- In Render settings, set the `DATABASE_URL` environment variable to your external DB URL.
 
-Example external DB URL (do not commit your real secret):
-`postgresql://<username>:<password>@<host>.oregon-postgres.render.com/<database>`
+Security
+- Do NOT commit secrets (like the real `DATABASE_URL`) to the repo.
+- Use Render's environment variables to store secrets.
 
-- Optionally set `PORT` to `3000` (Render will provide a port automatically, but the app reads `process.env.PORT`).
+If you want, I can:
+- Run the SQL in your provided Render Postgres URL.
+- Help set up the Render service and environment variables.
 
-Post-deploy checks:
-- Open the deployed service URL and visit `/view-employees.html` and the dashboard to confirm data loads.
-- Use the following PSQL command locally (replace placeholders with your real values) to connect and verify data:
-```bash
-PGPASSWORD=<your_db_password> psql -h <host>.oregon-postgres.render.com -U <username> <database>
-```
-
-Security notes:
-- Never commit secrets like the `DATABASE_URL` into source control. Use Render's dashboard or secret manager to store sensitive environment variables.
