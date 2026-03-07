@@ -33,28 +33,22 @@ exports.getAllEmployees = async (req, res) => {
 // DASHBOARD STATS
 // =============================
 exports.getDashboardStats = async (req, res) => {
-  try {
-    const totalEmployees = await pool.query(
-      "SELECT COUNT(*) FROM employees"
-    );
+    try {
+        const totalEmployees = await pool.query("SELECT COUNT(*) AS count FROM employees");
 
-    const totalPayroll = await pool.query(
-      "SELECT SUM(salary) FROM employees"
-    );
+        const totalPayroll = await pool.query("SELECT COALESCE(SUM(salary), 0) AS sum FROM employees");
 
-    const totalDepartments = await pool.query(
-      "SELECT COUNT(*) FROM departments"
-    );
+        const totalDepartments = await pool.query("SELECT COUNT(*) AS count FROM departments");
 
-    res.status(200).json({
-      totalEmployees: totalEmployees.rows[0].count,
-      totalPayroll: totalPayroll.rows[0].sum,
-      totalDepartments: totalDepartments.rows[0].count,
-    });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: "Server Error" });
-  }
+        res.status(200).json({
+            totalEmployees: Number(totalEmployees.rows[0].count),
+            totalPayroll: Number(totalPayroll.rows[0].sum),
+            totalDepartments: Number(totalDepartments.rows[0].count),
+        });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: "Server Error" });
+    }
 };
 
 // =============================
