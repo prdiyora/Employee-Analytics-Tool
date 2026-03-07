@@ -1,0 +1,16 @@
+# Render service manifest (template)
+# Replace placeholders or set env vars in Render dashboard. Do NOT commit secrets.
+
+services:
+  - type: web
+    name: employee-management-system
+    env: node
+    plan: free
+    buildCommand: "npm install"
+    startCommand: "npm start"
+    envVars:
+      - key: DATABASE_URL
+        # For security, set this value in the Render dashboard and do not commit it here.
+        value: "REPLACE_WITH_YOUR_DATABASE_URL"
+      - key: PORT
+        value: "3000"

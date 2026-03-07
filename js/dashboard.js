@@ -1,7 +1,7 @@
 // Fetch dashboard statistics from backend
 async function loadDashboard() {
     try {
-        const response = await fetch("http://localhost:5000/api/employees/stats");
+        const response = await fetch("/api/employees/stats");
         const data = await response.json();
 
         document.getElementById("totalEmployees").innerText = data.totalEmployees;

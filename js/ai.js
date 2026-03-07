@@ -19,7 +19,7 @@ async function sendQuestion(questionText = null) {
     input.value = "";
 
     // Fetch AI response
-    const response = await fetch("http://localhost:5000/api/employees/ai/query", {
+    const response = await fetch("/api/employees/ai/query", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ question })

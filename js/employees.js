@@ -1,6 +1,6 @@
 // Load employees
 async function loadEmployees() {
-    const response = await fetch("http://localhost:5000/api/employees");
+    const response = await fetch("/api/employees");
     const data = await response.json();
 
     const table = document.getElementById("employeeTable");
@@ -29,7 +29,7 @@ async function loadEmployees() {
 // Delete employee
 async function deleteEmployee(id) {
     if(confirm("Are you sure you want to delete?")) {
-        await fetch(`http://localhost:5000/api/employees/${id}`, {
+        await fetch(`/api/employees/${id}`, {
             method: "DELETE"
         });
         loadEmployees();
